@@ -7,4 +7,6 @@ class Character
     @offense = offense
     @defense = defense
   end
- end
+  
+  
+end
