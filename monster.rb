@@ -10,4 +10,15 @@ class Monster < Character
     puts "#{brave.name}は#{self.offense-brave.defense/2}のダメージを受けた!"
     brave.hp -= self.offense-brave.defense/2
   end
+  
+  def point
+    puts <<~TEXT
+      【#{self.name}】HP: #{self.hp}
+      *=*=*=*=*=*=*=*=*=*=*"
+      TEXT
+  end
+  
+  def dead
+    puts "#{self.name} をやっつけた!"
+  end
 end

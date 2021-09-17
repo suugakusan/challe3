@@ -8,5 +8,4 @@ class Character
     @defense = defense
   end
   
-  
 end
