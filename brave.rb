@@ -2,9 +2,9 @@ require './character'
 
 class Brave < Character
   def attack(monster)
-    puts "#{self.name} の攻撃!"
-    puts "#{monster.name}に#{self.offense-monster.defense/2}のダメージを与えた!"
-    monster.hp -= self.offense-monster.defense/2
+    puts "#{@name} の攻撃!"
+    puts "#{monster.name}に#{@offense-monster.defense/2}のダメージを与えた!"
+    monster.hp -= @offense-monster.defense/2
     
     if monster.hp <= 0
       monster.hp = 0
@@ -16,11 +16,11 @@ class Brave < Character
   def point
     puts <<~TEXT
       *=*=*=*=*=*=*=*=*=*=*
-      【#{self.name}】HP: #{self.hp}
+      【#{@name}】HP: #{@hp}
       TEXT
   end
   
   def dead
-    puts "#{self.name} はしんでしまった!"
+    puts "#{@name} はしんでしまった!"
   end
 end

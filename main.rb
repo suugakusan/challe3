@@ -10,19 +10,14 @@ monster.appear
 
 while brave.hp >= 0 && monster.hp >= 0 do
   brave.attack(monster) 
-  break if  monster.hp == 0
-  monster.attack(brave)
-  break if  brave.hp == 0
-  
+  if monster.hp != 0
+    monster.attack(brave)
+  end
   brave.point
   monster.point
+  break if brave.hp == 0 || monster.hp == 0 
 end
-brave.point
-monster.point
 
-if brave.hp == 0
-  brave.dead
-elsif monster.hp == 0
-  monster.dead
-end
+brave.hp == 0 ? brave.dead : monster.dead
+
 

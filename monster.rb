@@ -2,13 +2,13 @@ require './character'
 
 class Monster < Character
   def appear
-    puts "#{self.name} があらわれた!"
+    puts "#{@name} があらわれた!"
   end
   
   def attack(brave)
-    puts "#{self.name} の攻撃!"
-    puts "#{brave.name}は#{self.offense-brave.defense/2}のダメージを受けた!"
-    brave.hp -= self.offense-brave.defense/2
+    puts "#{@name} の攻撃!"
+    puts "#{brave.name}は#{@offense-brave.defense/2}のダメージを受けた!"
+    brave.hp -= @offense-brave.defense/2
     if brave.hp <= 0
       brave.hp = 0
       
@@ -17,12 +17,12 @@ class Monster < Character
   
   def point
     puts <<~TEXT
-      【#{self.name}】HP: #{self.hp}
+      【#{@name}】HP: #{@hp}
       *=*=*=*=*=*=*=*=*=*=*"
       TEXT
   end
   
   def dead
-    puts "#{self.name} をやっつけた!"
+    puts "#{@name} をやっつけた!"
   end
 end
