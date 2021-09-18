@@ -4,7 +4,7 @@ require './monster'
 
 
 brave = Brave.new(name: "ゆうしゃ", hp: 238, offense: 203, defense: 129)
-monster = Monster.new(name: "アークデーモン", hp: 210, offense: 140, defense: 80)
+monster = Monster.new(name: "シドー", hp: 250, offense: 255, defense: 254)
 
 monster.appear
 
@@ -25,4 +25,3 @@ if brave.hp == 0
 elsif monster.hp == 0
   monster.dead
 end
-

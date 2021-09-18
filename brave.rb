@@ -5,12 +5,18 @@ class Brave < Character
     puts "#{self.name} の攻撃!"
     puts "#{monster.name}に#{self.offense-monster.defense/2}のダメージを与えた!"
     monster.hp -= self.offense-monster.defense/2
+    
+    if monster.hp <= 0
+      monster.hp = 0
+    end
+    
+    
   end
   
   def point
     puts <<~TEXT
       *=*=*=*=*=*=*=*=*=*=*
-      #{self.name}】HP: #{self.hp}
+      【#{self.name}】HP: #{self.hp}
       TEXT
   end
   

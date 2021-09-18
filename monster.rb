@@ -9,6 +9,10 @@ class Monster < Character
     puts "#{self.name} の攻撃!"
     puts "#{brave.name}は#{self.offense-brave.defense/2}のダメージを受けた!"
     brave.hp -= self.offense-brave.defense/2
+    if brave.hp <= 0
+      brave.hp = 0
+      
+    end
   end
   
   def point
