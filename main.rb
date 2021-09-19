@@ -8,14 +8,11 @@ monster = Monster.new(name: "アークデーモン", hp: 210, offense: 140, defe
 
 monster.appear
 
-while brave.hp >= 0 && monster.hp >= 0 do
+while brave.hp != 0 && monster.hp != 0 do
   brave.attack(monster) 
-  if monster.hp != 0
-    monster.attack(brave)
-  end
+  monster.attack(brave) if monster.hp != 0  
   brave.point
   monster.point
-  break if brave.hp == 0 || monster.hp == 0 
 end
 
 brave.hp == 0 ? brave.dead : monster.dead

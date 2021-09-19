@@ -2,15 +2,11 @@ require './character'
 
 class Brave < Character
   def attack(monster)
+    attackpoint = @offense-monster.defense/2
     puts "#{@name} の攻撃!"
-    puts "#{monster.name}に#{@offense-monster.defense/2}のダメージを与えた!"
-    monster.hp -= @offense-monster.defense/2
-    
-    if monster.hp <= 0
-      monster.hp = 0
-    end
-    
-    
+    puts "#{monster.name}に#{attackpoint}のダメージを与えた!"
+    monster.hp -= attackpoint
+    monster.hp = 0 if monster.hp <= 0
   end
   
   def point
